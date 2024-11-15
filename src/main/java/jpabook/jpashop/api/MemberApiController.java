@@ -34,6 +34,7 @@ public class MemberApiController {
             .collect(Collectors.toList());
 
         return new Result(collect);
+
     }
 
 
