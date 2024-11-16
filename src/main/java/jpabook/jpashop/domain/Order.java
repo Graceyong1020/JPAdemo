@@ -3,6 +3,7 @@ package jpabook.jpashop.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class Order {
     @JoinColumn(name = "member_id") // 외래키를 매핑할 때 사용
     private Member member;
 
+    @BatchSize(size = 1000) // 컬렉션을 한번에 가져올 때 사용
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL) // orderItem과 order는 일대다 관계
     private List<OrderItem> orderItems = new ArrayList<>();
 
