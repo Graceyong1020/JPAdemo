@@ -13,7 +13,7 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class OrderRepository {
+public class OrderRepository { // 핵심 비지니스 로직 구현
 
     private final EntityManager em;
 
